@@ -1,0 +1,270 @@
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"> <script src="https://code.jquery.com/jquery-1.12.4.js"></script> <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script> <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> <script>
+function getCheckedValue(radioObj) {
+if(!radioObj)
+    return "";
+var radioLength = radioObj.length;
+if(radioLength == undefined)
+    if(radioObj.checked)
+        return radioObj.value;
+    else
+        return "";
+for(var i = 0; i < radioLength; i++) {
+    if(radioObj[i].checked) {
+        return radioObj[i].value;
+    }
+}
+alert('Please choose a valid option');
+return "";
+}
+
+// set the radio button with the given value as being checked
+// do nothing if there are no radio buttons
+// if the given value does not exist, all the radio buttons
+// are reset to unchecked
+function setCheckedValue(radioObj, newValue) {
+if(!radioObj)
+    return;
+var radioLength = radioObj.length;
+if(radioLength == undefined) {
+    radioObj.checked = (radioObj.value == newValue.toString());
+    return;
+}
+for(var i = 0; i < radioLength; i++) {
+    radioObj[i].checked = false;
+    if(radioObj[i].value == newValue.toString()) {
+        radioObj[i].checked = true;
+    }
+}
+}
+</script>
+<div class="np-form"><form action="" method="get" name="np-form1" onsubmit="return false;">
+<div class="row">
+<div class="col-25"><label for="linking">Make a referral<span style="color: red;">*</span></label></div>
+<p>&nbsp;<label for="number0"><input id="number0" name="number" value="https://0997f3.myshopify.com/pages/service-provider-form" type="radio">As a Service Provider</label> <br> &nbsp;<label for="number1"><input id="number1" name="number" value="https://0997f3.myshopify.com/pages/parent-guardian-referral-form" type="radio">As a Parent/Guardian</label></p>
+<br> <input value="Next" type="button" onclick="window.location.href = (getCheckedValue(document.forms['np-form1'].elements['number']));"></div>
+</form></div>
+<style><!--
+select {
+	   font-family: "Montserrat", sans-serif;
+	  font-size:18px;
+	}
+
+.h3 {
+  color: #37c2db;
+}
+
+html * {
+  font-family: "Montserrat", sans-serif;
+}
+
+
+	input[type="text"]
+	{
+		font-size:18px;
+		 font-family: "Montserrat", sans-serif;
+		color:black;
+	}
+
+
+	input[type="email"]
+	{
+		font-size:18px;
+		 font-family: "Montserrat", sans-serif;
+		color:black;
+	}
+
+	input[type="tel"]
+	{
+		font-size:18px;
+		 font-family: "Montserrat", sans-serif;
+		color:black;
+	}
+
+	.sub-entry3 {
+			width: 100%;
+			float: left;
+		}
+
+	.np-form label:before {
+		content: "\a";
+		white-space: pre;
+	}
+
+	.np-form { 
+		padding-left: 20px; 
+		padding-right: 20px; 
+	}
+
+	p {
+	  font-size: 18px; 
+	   font-family: "Montserrat", sans-serif;
+	}
+
+	.np-form input[type=text],input[type=tel],input[type=email], select, textarea, input[type=number], input[type=date]
+	{
+		  width: 100%;
+		  font-family: "Montserrat", sans-serif;
+		  font-size: 18px;
+	}
+
+	div {
+		 font-family: "Montserrat", sans-serif;
+		font-size: 18px;
+	}
+
+	input.largerCheckbox {
+				width: 20px;
+				height: 20px;
+			}
+
+	.np-form input[type=checkbox]
+	{
+	vertical-align:middle;
+	}
+
+	 .np-form select {
+		   width: 100%;
+		   font-family: "Montserrat", sans-serif;
+		 }
+
+	.np-form input[type=text] {
+			width: 100%;
+		    font-family: "Montserrat", sans-serif;
+		 }
+
+	.np-form span{
+		 color:red;
+		}
+		.np-form input[type=submit], input[type=button] {
+		  background-color: #01609d;
+		  box-shadow: 0 2px 0 0 #01609d;
+		  color: black;
+		  padding: 10px 35px;
+		  border: none;
+		  border-radius: 4px;
+		  cursor: pointer;
+		  font-weight:bold;
+		}
+
+	 .sub-entry {
+			width: 45%;
+			float: left;
+			
+		}
+		
+		.sub-entry7 {
+			width: 30%;
+			float: left;
+			
+		}
+			
+		.sub-entry8 {
+			width: 30%;
+			float: left;
+			
+		}
+		
+		.sub-entry9 {
+			width: 30%;
+			float: right;
+			
+		}
+		
+	 .sub-entry4 {
+			width: 48%;
+			float: left;
+			
+		}
+
+	 .sub-entry5 {
+			width: 48%;
+			float: right;
+			
+		}
+
+	 .sub-entry1 {
+			width: 45%;
+			float: right;
+		}
+
+
+	.sub-entry2 {
+			width: 100%;
+					
+		}
+		
+		
+		.leftbox {
+                float: left; 
+				width: 25%;
+            }
+			
+			.middlebox {
+                float: left; 
+				width: 25%;
+            }
+            
+           
+            .rightbox{
+                float: right; 
+				width: 25%;
+            }
+			
+
+
+
+	.buttonHolder{ text-align: center; }
+		
+	.np-form label {
+		  display: inline-block;
+		  font-size:18px;     
+		}
+		
+			 .np-form input[type=submit], input[type=button] {
+			  background-color: #01609d;
+			  box-shadow: 0 2px 0 0 #01609d;
+			  color: white;
+			  padding: 10px 35px;
+			  border: none;
+			  border-radius: 4px;
+			  cursor: pointer;
+			  float: center;
+			  position: relative;
+			  left: 45%;
+			  top:70%;
+			  font-weight:bold;
+			  margin-top:6px!important;
+			  font-size:15px;
+			  font-family: "Montserrat", sans-serif;
+			  border-radius: 300px;
+			}
+			
+		input[type=checkbox]
+{
+accent-color: #01609d;
+mix-blend-mode: multiply;
+}
+
+		.np-form input[type=submit]:hover {
+		  background-color: #01609d; 
+		}
+
+
+	@media screen and (max-width: 1062px) {
+		.np-form .col-25, .np-form .col-75 {
+		  width: 100%;
+		  margin-top: 0;
+		}
+		.np-form select {
+			width: 101%;
+		 }
+		 
+		 .np-form input[type=submit]
+	{
+      margin-top: 0;
+	  left: 45%;
+		  top:70%;
+	}	  
+		 
+	  }
+--></style>
