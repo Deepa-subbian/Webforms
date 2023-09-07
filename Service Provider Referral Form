@@ -1,0 +1,374 @@
+<!--  ----------------------------------------------------------------------  --> 
+<!--  NOTE: Please add the following <META> element to your page <HEAD>.      --> 
+<!--  If necessary, please modify the charset parameter to specify the        --> 
+<!--  character set of your HTML page.                                        --> 
+<!--  ----------------------------------------------------------------------  --> 
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8"> 
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
+<link rel="stylesheet" href="/resources/demos/style.css"> 
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script> 
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"> 
+<link rel="stylesheet" href="JScript/jquery-ui.css"> 
+<link rel="stylesheet" href="JScript/style.css"> 
+<script src="JScript/jquery-1.12.4.js"></script> 
+<script src="JScript/jquery-ui.js"></script> 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"> 
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script> 
+<!-- Google reCAPTCHA Validation --> 
+<script src="https://www.google.com/recaptcha/api.js"></script> 
+<script>
+ function submitUserForm() {  
+    var response = grecaptcha.getResponse();
+    if(response.length == 0) {
+        document.getElementById('g-recaptcha-error').innerHTML = '<span style="color:red;">Google reCAPTCHA is required.</span>';
+        return false;
+    }
+	document.getElementById('oid').value = '00D5i00000EWPvx';
+    return true;
+}  
+function verifyCaptcha() {
+    document.getElementById('g-recaptcha-error').innerHTML = '';
+}
+</script>
+<script>
+$(document).on('click','#supplied',function(){
+    $("#supplied_company").hide();
+            if ($("#supplied").is(':checked')) {
+                $("#supplied_company").show();        
+            }
+        });
+</script> 
+<script>
+$(document).ready(function(){
+    $('#00N5i00000TJWC7').on('change', function(){
+      var hdh = $("#00N5i00000TJWC7"). val();
+      if(hdh!=null && hdh.indexOf("Other") >= 0)
+      {                                    
+          $('#00N5i00000UDwx4').attr('required', 'required');
+          $('#OtherEnq').show();
+		  
+      }else{
+          $('#00N5i00000UDwx4').removeAttr('required');
+          $('#OtherEnq').hide();  
+          $('#00N5i00000UDwx4').val('');
+      }	  
+  }).change();
+});
+</script> 
+<!--  ----------------------------------------------------------------------  --> 
+<!--  NOTE: Please add the following <FORM> element to your page.             --> 
+<!--  ----------------------------------------------------------------------  -->
+<div class="np-form"><form method="POST" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" onsubmit="return submitUserForm();">
+<input id="oid" value="" name="oid" type="hidden"> 
+<input value="https://0997f3.myshopify.com/pages/thank-you-for-your-enquiry" name="retURL" type="hidden"> <!--  ----------------------------------------------------------------------  --> <!--  NOTE: These fields are optional debugging elements. Please uncomment    --> <!--  these lines if you wish to test in debug mode.                          --> <!--  <input type="hidden" name="debug" value=1>                              --> <!--  <input type="hidden" name="debugEmail"                                  --> <!--  value="deepa@blazeyourtrail.org">                                       --> <!--  ----------------------------------------------------------------------  --> <!--Lead Source--> <input value="Web" name="lead_source" id="lead_source" type="hidden"> <!-- Lead type --> <input value="Referral from Service Provider" name="00N5i00000UDwzP" id="00N5i00000UDwzP" type="hidden"> <!-- Preferred Phone --> <input value="Mobile" name="00N5i00000TZ4bs" id="00N5i00000TZ4bs" type="hidden"> <!-- Preferred Email --> <input value="Personal" name="00N5i00000TZ4br" id="00N5i00000TZ4br" type="hidden"> <!-- Contact type --> <input value="Young Person" name="00N5i00000TKLTP" id="00N5i00000TKLTP" type="hidden"> <!-- Company --> <input type="hidden" id="company" name="company" value="Individual"><fieldset class="field_set"><legend style="color: #37c2db;">Service Provider Details</legend> <!-- First Name -->
+<div class="sub-entry3">
+<div class="col-25"><label for="firstname">First Name<span style="color: red;">*</span></label></div>
+<div class="col-75"><input required="" type="text" size="20" name="00N5i00000UDxc7" pattern="^[a-zA-Z ]*$" title="Please only enter text" maxlength="80" id="00N5i00000UDxc7"></div>
+</div>
+<!-- Last Name -->
+<div class="sub-entry3">
+<div class="col-25"><label for="lastname">Last Name<span style="color: red;">*</span></label></div>
+<div class="col-75"><input required="" type="text" size="20" name="00N5i00000UDxcC" pattern="^[a-zA-Z ]*$" title="Please only enter text" maxlength="80" id="00N5i00000UDxcC"></div>
+</div>
+<!-- Title -->
+<div class="sub-entry3">
+<div class="col-25"><label for="title">Title</label></div>
+<div class="col-75"><input type="text" name="00N5i00000UDyr4" id="00N5i00000UDyr4" size="20" pattern="^[a-zA-Z ]*$" title="Please only enter text" maxlength="40"></div>
+</div>
+<!-- Mobile -->
+<div class="sub-entry3">
+<div class="col-25"><label for="mobile">Mobile</label></div>
+<div class="col-75"><input type="tel" size="20" pattern="^04[0-9]{8}" name="00N5i00000UDyrO" maxlength="40" title="Please enter your 10 digit mobile number." id="00N5i00000UDyrO"> <small>Example: 04xxxxxxxx</small></div>
+</div>
+<!-- Email -->
+<div class="sub-entry3">
+<div class="col-25"><label for="email">Email<span style="color: red;">*</span></label></div>
+<div class="col-75"><input type="email" size="20" required="" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" name="00N5i00000UDyqu" maxlength="100" title="Please enter a valid email address." id="00N5i00000UDyqu"></div>
+</div>
+<!-- Organisation -->
+<div class="sub-entry3">
+<div class="col-25"><label for="Company">Name of Business or Organisation </label></div>
+<div class="col-75"><input type="text" size="20" name="00N5i00000UDyr9" maxlength="40" id="00N5i00000UDyr9"></div>
+</div>
+</fieldset>
+<div class="sub-entry3"></div>
+<fieldset class="field_set"><legend style="color: #37c2db;">Young Person's Details</legend> <!-- Referral First Name -->
+<div class="sub-entry3">
+<div class="col-25"><label for="first_name">First Name<span style="color: red;">*</span></label></div>
+<div class="col-75"><input required="" type="text" size="20" name="first_name" pattern="^[a-zA-Z ]*$" title="Please only enter text" maxlength="40" id="first_name"></div>
+</div>
+<!-- Last Name -->
+<div class="sub-entry3">
+<div class="col-25"><label for="last_name">Last Name<span style="color: red;">*</span></label></div>
+<div class="col-75"><input required="" type="text" size="20" name="last_name" pattern="^[a-zA-Z ]*$" title="Please only enter text" maxlength="80" id="last_name"></div>
+</div>
+<!-- Gender -->
+<div class="sub-entry3">
+<div class="col-25"><label for="gender">Gender<span style="color: red;">*</span></label></div>
+<div class="col-75"><select id="00N5i00000TJgyL" name="00N5i00000TJgyL" title="Gender" required="">
+<option value="">--None--</option>
+<option value="Boy">Boy</option>
+<option value="Girl">Girl</option>
+</select></div>
+</div>
+<!-- Year at school -->
+<div class="sub-entry3">
+<div class="col-25"><label for="Other_enq">Year at School</label></div>
+<div class="col-75"><input required="" type="text" size="20" name="00N5i00000TKLTK" maxlength="4" id="00N5i00000TKLTK"></div>
+</div>
+<!-- School name -->
+<div class="sub-entry3">
+<div class="col-25"><label for="Other_enq">School Name</label></div>
+<div class="col-75"><input required="" type="text" size="20" name="00N5i00000UDxcH" maxlength="255" id="00N5i00000UDxcH"></div>
+</div>
+<!-- Description -->
+<div class="sub-entry3">
+<div class="col-25"><label for="description">How can we help you?</label></div>
+<div class="col-75"><textarea name="description"></textarea></div>
+</div>
+<div class="sub-entry3">
+<div class="col-25"><br> <input checked="checked" value="True" type="checkbox" name="00N5i00000TJWFk" id="00N5i00000TJWFk"> Sign up to our newsletter. No spam we promise. Your privacy is important to us. Please see our <a href="https://staging.dunleacentre.org.au/wp-content/uploads/2022/09/Privacy.pdf" target="_blank">Privacy Policy.</a></div>
+</div>
+<br><br></fieldset>
+<!-- Google reCAPTCHA --> 
+<div class="sub-entry3"><br>
+<div data-callback="verifyCaptcha" align="center" data-sitekey="6LdQmAYoAAAAAEpgIOtbviI3nFDzWv0-YNqls5ao" class="g-recaptcha"></div>
+<br>
+<div id="g-recaptcha-error"></div>
+</div> 
+<!-- Submit Button -->
+<div class="sub-entry3"><input value="SUBMIT" align="center" type="submit"></div>
+</form></div>
+<style><!--
+select {
+	  font-family: "Montserrat", sans-serif;
+	  font-size:18px;
+	}
+
+.h3 {
+  color: #37c2db;
+}
+
+html * {
+  font-family: "Montserrat", sans-serif;
+}
+
+
+fieldset {
+        border: 1px solid lightgray;
+		font-size: 22px;
+    }
+
+	input[type="text"]
+	{
+		font-size:18px;
+		font-family: "Montserrat", sans-serif;
+		color:black;
+	}
+
+
+	input[type="email"]
+	{
+		font-size:18px;
+		font-family: "Montserrat", sans-serif;
+		color:black;
+	}
+
+	input[type="tel"]
+	{
+		font-size:18px;
+		font-family: "Montserrat", sans-serif;
+		color:black;
+	}
+
+	.sub-entry3 {
+			width: 100%;
+			float: left;
+		}
+
+	.np-form label:before {
+		content: "\a";
+		white-space: pre;
+	}
+
+	.np-form { 
+		padding-left: 20px; 
+		padding-right: 20px; 
+	}
+
+	p {
+	  font-size: 18px; 
+	  font-family: "Montserrat", sans-serif;
+	}
+
+	.np-form input[type=text],input[type=tel],input[type=email], select, textarea, input[type=number], input[type=date]
+	{
+		  width: 100%;
+		  font-family: "Montserrat", sans-serif;
+		  font-size: 18px;
+	}
+
+	div {
+		font-family: "Montserrat", sans-serif;
+		font-size: 18px;
+	}
+
+	input.largerCheckbox {
+				width: 20px;
+				height: 20px;
+			}
+
+	.np-form input[type=checkbox]
+	{
+	vertical-align:middle;
+	}
+
+	 .np-form select {
+		   width: 100%;
+		   font-family: "Montserrat", sans-serif;
+		 }
+
+	.np-form input[type=text] {
+			width: 100%;
+		   font-family: "Montserrat", sans-serif;
+		 }
+
+	.np-form span{
+		 color:red;
+		}
+		.np-form input[type=submit], input[type=button] {
+		  background-color: #01609d;
+		  box-shadow: 0 2px 0 0 #01609d;
+		  color: black;
+		  padding: 10px 35px;
+		  border: none;
+		  border-radius: 4px;
+		  cursor: pointer;
+		  font-weight:bold;
+		}
+
+	 .sub-entry {
+			width: 45%;
+			float: left;
+			
+		}
+		
+		.sub-entry7 {
+			width: 30%;
+			float: left;
+			
+		}
+			
+		.sub-entry8 {
+			width: 30%;
+			float: left;
+			
+		}
+		
+		.sub-entry9 {
+			width: 30%;
+			float: right;
+			
+		}
+		
+	 .sub-entry4 {
+			width: 48%;
+			float: left;
+			
+		}
+
+	 .sub-entry5 {
+			width: 48%;
+			float: right;
+			
+		}
+
+	 .sub-entry1 {
+			width: 45%;
+			float: right;
+		}
+
+
+	.sub-entry2 {
+			width: 100%;
+					
+		}
+		
+		
+		.leftbox {
+                float: left; 
+				width: 25%;
+            }
+			
+			.middlebox {
+                float: left; 
+				width: 25%;
+            }
+            
+           
+            .rightbox{
+                float: right; 
+				width: 25%;
+            }
+			
+
+
+
+	.buttonHolder{ text-align: center; }
+		
+	.np-form label {
+		  display: inline-block;
+		  font-size:18px;     
+		}
+		
+			 .np-form input[type=submit], input[type=button] {
+			  background-color: #01609d;
+			  box-shadow: 0 2px 0 0 #01609d;
+			  color: white;
+			  padding: 10px 35px;
+			  border: none;
+			  border-radius: 4px;
+			  cursor: pointer;
+			  float: center;
+			  position: relative;
+			  left: 45%;
+			  top:70%;
+			  font-weight:bold;
+			  margin-top:6px!important;
+			  font-size:15px;
+			  font-family: "Montserrat", sans-serif;
+			  border-radius: 300px;
+			}
+			
+		input[type=checkbox]
+{
+accent-color: #01609d;
+mix-blend-mode: multiply;
+}
+
+		.np-form input[type=submit]:hover {
+		  background-color: #01609d; 
+		}
+
+
+	@media screen and (max-width: 1062px) {
+		.np-form .col-25, .np-form .col-75 {
+		  width: 100%;
+		  margin-top: 0;
+		}
+		.np-form select {
+			width: 101%;
+		 }
+		 
+		 .np-form input[type=submit]
+	{
+      margin-top: 0;
+	  left: 45%;
+		  top:70%;
+	}	  
+		 
+	  }
+--></style>
