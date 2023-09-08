@@ -57,12 +57,12 @@ $(document).on('click','#supplied',function(){
 <div class="col-25"><label for="comp">What is the nature of your enquiry?<span style="color: red;">*</span></label></div>
 <div class="col-75"><select required="" title="What is the nature of your enquiry?" name="00N5i00000TJWC7" id="00N5i00000TJWC7">
 <option value="">--None--</option>
+<option value="Get Help">I would like to get some help</option>
+<option value="Request Items for someone">I would like to refer someone for help</option>
 <option value="Volunteer">I would like to apply to become a regular volunteer</option>
 <option value="Donate Money">I would like to make a financial donation</option>
 <option value="Donate some goods">I would like to donate some items</option>
 <option value="Fundraise">I would like to fundraise for you</option>
-<option value="Get Help">I would like to get some help</option>
-<option value="Request Items for someone">I would like to refer someone for help</option>
 <option value="Other">Other</option>
 </select></div>
 </div>
